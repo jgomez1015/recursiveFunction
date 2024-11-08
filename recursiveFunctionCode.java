@@ -5,32 +5,40 @@ public class recursiveFunctionCode {
     public static void main(String[] args) {
     Scanner scn = new Scanner(System.in);
     
-    System.out.print("Enter a number (whole # only):  ");
-    while (!scn.hasNextInt()) {
-        System.out.print("Please enter a valid whole number. ");
+    System.out.print("Enter a number (decimal allowed):  ");
+    while (!scn.hasNextDouble()) {
+        System.out.print("Please enter a valid number. ");
         scn.next();
     }
-    int x = scn.nextInt();
+    double x = scn.nextDouble();
     
-    System.out.print("Please enter another whole number for 'n': ");
+    System.out.print("Please enter a non-negative whole number for 'n': ");
     while (!scn.hasNextInt()) {
         System.out.print("Please enter a valid whole number. ");
         scn.next();
     }
     int n = scn.nextInt();
-    
-    int xn = power(x, n);
-    System.out.println(xn);
+
+    if (n < 0) {
+        System.out.println("'n' must be a non-negative whole number. Try again. ");
+        return;
+    }
+
+    double result = power(x, n);
+    System.out.println(x + " raised to the power of " + n + " is: " + result);
 
     scn.close();
     }
 
-    public static int power(int x, int n){
+    public static double power(int x, int n){
         if(n == 0){
-            return 1; 
+        return 1;
         }
-        int xnm1 = power(x, n-1);
-        int xn = x * xnm1;
+        double xnm1 = power(x, n - 1);
+        double xn = x * xnm1;
+
+        
         return xn;
     }
+    
 }

@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "recursiveFunctionCode",
+            "request": "launch",
+            "mainClass": "recursiveFunctionCode",
+            "projectName": ""
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
