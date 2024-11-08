@@ -30,12 +30,12 @@ public class recursiveFunctionCode {
     scn.close();
     }
 
-    public static double power(int x, int n){
-        if(n == 0){
-        return 1;
-        }
-        double xnm1 = power(x, n - 1);
-        double xn = x * xnm1;
+    public static double power(double x, int n){
+            if(n == 0){
+            return 1;
+            }
+            double xnm1 = power(x, n - 1);
+            double xn = x * xnm1;
 
         
         return xn;
