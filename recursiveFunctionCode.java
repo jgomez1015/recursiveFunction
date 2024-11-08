@@ -2,10 +2,27 @@ import java.util.Scanner;
 
 public class recursiveFunctionCode {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
     Scanner scn = new Scanner(System.in);
+    
+    System.out.print("Enter a number (whole # only):  ");
+    while (!scn.hasNextInt()) {
+        System.out.print("Please enter a valid whole number. ");
+        scn.next();
+    }
     int x = scn.nextInt();
+    
+    System.out.print("Please enter another whole number for 'n': ");
+    while (!scn.hasNextInt()) {
+        System.out.print("Please enter a valid whole number. ");
+        scn.next();
+    }
     int n = scn.nextInt();
+    
+    int xn = power(x, n);
+    System.out.println(xn);
+
+    scn.close();
     }
 
     public static int power(int x, int n){
